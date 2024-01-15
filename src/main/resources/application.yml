@@ -1,0 +1,36 @@
+spring:
+  config:
+    activate:
+      on-profile: "dev"
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: "dev"
+  datasource:
+    url: jdbc:h2:mem:distrocentre
+    generate-unique-name: false
+  h2:
+    console:
+      enabled: true
+server:
+  port: 8082
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: "qa"
+  datasource:
+    url: jdbc:postgresql://localhost:5432/finalproject
+    username: bruce
+    password: 123
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+server:
+  port: 8082
